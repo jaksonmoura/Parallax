@@ -1,0 +1,94 @@
+*, *:before, *:after{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+}
+
+html, body{
+	background: #E7E7E7;
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+	font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
+h1{
+	width: 400px;
+	height: 150px;
+	line-height: 150px;
+	font-size: 50px;
+	text-align: center;
+	font-weight: 100;
+	color: #fff;
+	position: absolute;
+	top: 100px;
+	left: calc(50% - 200px);
+	background: rgba(0,0,0,.5);
+	z-index: 1;
+}
+
+.content{
+	width: 80%;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+.top{
+	float: left;
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+}
+
+#top_image{
+	position: relative;
+	width: 100%;
+	height: 500px;
+	background: url('http://cdn.twitrcovers.com/wp-content/uploads/2013/08/Macro-Objects-l.jpg') no-repeat;
+	transform: translateZ(0);
+	-webkit-background-size: cover;
+	background-size: cover;
+	top: -40px;
+}
+
+.left, .right{
+	width: 48%;
+	height: 400px;
+	background: yellow;
+	position: relative;
+}
+.left{
+	float: left;
+	background: url('http://animalnewyork.com/wp-content/uploads/celebrity_weedists_poster.jpg');
+	-webkit-background-size: cover;
+	background-size: cover;
+	transform: translateZ(0);
+	background-position: -100px 0px;
+}
+.right{
+	float: right;
+	background: url('http://fc03.deviantart.net/fs71/i/2013/157/b/3/portal_minimalist_poster_by_pmjohnst-d56ro66.jpg');
+	-webkit-background-size: cover;
+	background-size: cover;
+	transform: translateZ(0);
+	background-position: 0px -150px;
+}
+
+.bottom{
+	float: left;
+	width: 100%;
+	height: 400px;
+	overflow: hidden;
+}
+
+#bot_image{
+	width: 100%;
+	height: 500px;
+	background: url('http://wallpicshd.com/wp-content/uploads/2013/05/Macro-Leaf-Landscape-HD-Wallpapers-1024x640.jpg');
+	transform: translateZ(0);
+	background-position: center center;
+	-webkit-background-size: cover;
+	background-size: cover;
+}

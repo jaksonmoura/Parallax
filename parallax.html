@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="untitled.css">
+	<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600' rel='stylesheet' type='text/css'>
+	<meta charset="utf-8">
+	<title>Teste</title>
+</head>
+<body>
+	<div class="content">
+		<div class="top">
+			<h1>PARALLAX</h1>
+			<div id="top_image"></div>
+		</div>
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+	<div class="bottom">
+		<div id="bot_image"></div>
+	</div>
+	<script src='jquery.js'></script>
+	<script>
+
+	  var animatedFrame = window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame || function(callback){ window.setTimeout(callback, 1000/60) }
+
+	  // Doing this make sure that if js don't work, images will be ok by css,
+	  // once i'm changing it just here
+	  $(window).ready(function(){
+	    $('.right').css({'left': '150px', 'opacity': '0'});
+	    $('.left').css({'right': '150px', 'opacity': '0'});
+	  });
+
+	  var lastPosition = -1;
+
+	  function loop(){
+
+	    // Avoid calculations if not needed
+	    if (lastPosition == window.pageYOffset) {
+	        animatedFrame(loop);
+	        return false;
+	    } else {
+	      lastPosition = window.pageYOffset;
+
+	      // var scroll = $(window).scrollTop();
+
+	      // console.log('Scroll: '+scroll);
+	      // console.log('Window: '+wind);
+
+
+	      $('#top_image').css({
+	        'transform' : 'translate3d(0px, '+(lastPosition)/60+'%, 0)'
+	      });
+
+	      $('#bot_image').css({
+	        'transform' : 'translate3d(0px, -'+(lastPosition-300)/30+'%, 0)'
+	      });
+
+	      if (lastPosition > 200){
+	        $('.right').animate({'opacity': '1', 'left': 0}, 850);
+	        $('.left').animate({'opacity': '1', 'right': 0}, 800);
+	      };
+
+	      animatedFrame(loop);
+	    }
+
+	  };
+	  loop();
+	  </script>
+
+</body>
+</html>
